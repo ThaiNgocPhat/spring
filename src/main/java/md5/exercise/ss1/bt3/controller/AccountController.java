@@ -38,7 +38,6 @@ public class AccountController {
     @GetMapping("/edit/{accountId}")
     public String showEditForm(@PathVariable Integer accountId, Model model) {
         Optional<Account> account = accountService.findById(accountId);
-
         if (account.isPresent()) {
             model.addAttribute("account", account.get());
         } else {
